@@ -4,11 +4,11 @@ Front-thumbnail image asset collection and automated downloader for **PloraAI/gp
 
 ## Overview
 
-This repository stores GPU thumbnail assets (`front-thumb/c{id}.jpg`) mapped by `tpu_id` alongside the Python automation script used to fetch and populate missing thumbnails.
+This repository stores GPU thumbnail assets (`front-thumb/{tpu_id}.jpg`) mapped by `tpu_id` alongside the Python automation script used to fetch and populate missing thumbnails.
 
 How the downloader works:
 1. Checks if `gpu_database.json` exists locally; if missing, it downloads `all.json` from [`PloraAI/gpu-database`](https://github.com/PloraAI/gpu-database/blob/main/data/all.json) and saves it as `gpu_database.json`.
-2. Iterates through unique `tpu_id` values (e.g., `c1234` -> `1234`) and skips any file already present in `front-thumb/`.
+2. Iterates through unique `tpu_id` values and skips any file already present in `front-thumb/`.
 3. Downloads the primary thumbnail from `https://tpucdn.com/gpu-specs/images-new/c/{id}-front-thumb.jpg`.
 4. If unavailable, falls back in order to:
    - TechPowerUp brand desktop placeholder (`https://www.techpowerup.com/gpudb/placeholder_{brand}_desktop` / `.jpg`)
