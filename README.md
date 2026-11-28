@@ -1,13 +1,13 @@
 # GPU Images
 
-Front-thumbnail image asset collection and automated downloader for **PloraAI/gpu-database**, sourced from **TechPowerUp** (`tpucdn.com` and `techpowerup.com`).
+Front-thumbnail image asset collection and automated downloader for **JascalAI/gpu-database**, sourced from **TechPowerUp** (`tpucdn.com` and `techpowerup.com`).
 
 ## Overview
 
 This repository stores GPU thumbnail assets (`front-thumb/{tpu_id}.jpg`) mapped by `tpu_id` alongside the Python automation script used to fetch and populate missing thumbnails.
 
 How the downloader works:
-1. Checks if `gpu_database.json` exists locally; if missing, it downloads `all.json` from [`PloraAI/gpu-database`](https://github.com/PloraAI/gpu-database/blob/main/data/all.json) and saves it as `gpu_database.json`.
+1. Checks if `gpu_database.json` exists locally; if missing, it downloads `all.json` from [`JascalAI/gpu-database`](https://github.com/JascalAI/gpu-database/blob/main/data/all.json) and saves it as `gpu_database.json`.
 2. Iterates through unique `tpu_id` values and skips any file already present in `front-thumb/`.
 3. Downloads the primary thumbnail from `https://tpucdn.com/gpu-specs/images-new/c/{id}-front-thumb.jpg`.
 4. If unavailable, falls back in order to:
@@ -32,7 +32,7 @@ How the downloader works:
 1. Clone the repository:
 
 ```bash
-git clone [https://github.com/PloraAI/gpu-images.git](https://github.com/PloraAI/gpu-images.git)
+git clone [https://github.com/JascalAI/gpu-images.git](https://github.com/JascalAI/gpu-images.git)
 cd gpu-images
 ```
 
@@ -56,5 +56,5 @@ The script resumes automatically on subsequent runs by skipping existing non-emp
 
 ## Data Source & Related Repository
 
-- **Specifications Database:** [`PloraAI/gpu-database`](https://github.com/PloraAI/gpu-database)
+- **Specifications Database:** [`JascalAI/gpu-database`](https://github.com/JascalAI/gpu-database)
 - **Image & Specs Source:** TechPowerUp GPU Database (`techpowerup.com` / `tpucdn.com`)
